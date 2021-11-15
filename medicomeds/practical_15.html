@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Practical 14</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        body
+        {
+            background-color: grey;
+        }
+        button
+        {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 40px;
+            background-color: yellow;
+        }
+        .main
+        {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        span
+        {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 40px;
+            color: yellow;
+        }
+    </style>
+    <body>
+     <h1 style="font-size: 35px; text-align: center; color: white;">COUNTER</h1>  
+     <div class="main">
+         <button id="decrease" onclick="decrease()">-</button>
+         <span id="counter"></span>
+         <button id="increase" onclick="increase()">+</button>
+     </div>
+     <script>
+         var x = document.getElementById("decrease");
+         var y = document.getElementById("increase");
+         var count = 0;
+         document.getElementById("counter").innerHTML = count;
+         function CheckZero(){
+             if(count == 0){
+                  document.getElementById("decrease").disabled = true;
+             }
+             else{
+                 document.getElementById("decrease").disabled = false;
+             }
+         }
+         function increase() {
+    count+=1;
+    document.getElementById("counter").innerHTML = count;
+    CheckZero();
+    } 
+    function decrease() {
+        count-=1;
+        document.getElementById("counter").innerHTML = count;  
+        CheckZero();
+    } 
+     </script>
+    </body>
+    
+</html>
